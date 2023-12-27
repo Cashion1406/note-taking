@@ -41,7 +41,7 @@ export const Publish = ({
       id: initialData._id,
       isPublished: true,
     })
-      .finally(() => setIsSubmitting(false));
+    .finally(() => setIsSubmitting(false));
 
     toast.promise(promise, {
       loading: "Publishing",
@@ -102,7 +102,7 @@ export const Publish = ({
             <div className="flex items-center gap-x-2">
               <Globe className="text-sky-500 animate-pulse h-4 w-4" />
               <p className="text-xs font-medium text-sky-500">
-                This note is live on web.
+                This note is live on da web.
               </p>
             </div>
             <div className="flex items-center">
@@ -141,7 +141,7 @@ export const Publish = ({
               Publish this note
             </p>
             <span className="text-xs text-muted-foreground mb-4">
-              Share your work with others.
+              Share your note with others.
             </span>
             <Button
               disabled={isSubmitting}

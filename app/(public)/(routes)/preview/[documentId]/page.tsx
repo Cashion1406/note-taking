@@ -9,6 +9,8 @@ import { Id } from "@/convex/_generated/dataModel";
 import { Toolbar } from "@/components/toolbar";
 import { Skeleton } from "@/components/ui/skeleton";
 import { Cover } from "@/components/cover";
+import { error } from "console";
+import Error from "next/error";
 
 interface DocumentIdPageProps {
     params: {
@@ -50,10 +52,11 @@ const DocumentIdPage = ({
         );
     }
 
-    if (document === null) {
-        return <div>Not found</div>
+    if (!document.isPublished || document === null) {
+        return Error
     }
 
+  
     return (
         <div className="pb-40">
             <Cover preview url={document.coverImage} />
